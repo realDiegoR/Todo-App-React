@@ -1,0 +1,35 @@
+.TodoItem {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 12px;
+    background-color:#f7cbdc;
+    border-radius: 2px;
+    /* box-shadow: 0 1px 5px black; */
+    border: 1px solid;
+    transition: background-color 200ms;
+}
+
+.TodoItem:hover {
+    box-shadow: 0 0 1px black;
+}
+
+.Icon-check-active {
+    color: #2cdf30;
+}
+
+.Icon-check:hover {
+    color: #4caf50;
+}
+
+
+.Icon-delete, .Icon-check {
+    cursor: pointer;
+}
+.Icon-delete:hover {
+    color: red;
+}
+
+.TodoItem__text--completed {
+    text-decoration: line-through;
+}

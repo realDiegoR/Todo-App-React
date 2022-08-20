@@ -1,0 +1,16 @@
+.TodoSearch {
+    padding: 8px 12px;
+    border-radius: 2px;
+    background-color: white;
+    border: 1px solid ;
+    outline: none;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.TodoSearch:focus {
+    border-width: 2px;
+}
+.TodoSearch::placeholder {
+    color: black;
+}

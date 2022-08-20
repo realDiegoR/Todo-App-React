@@ -1,0 +1,14 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    /* background-color: #c8f4fe; */
+}
+
+.Header h1{
+    align-self: flex-start;
+    font-size: 2.2rem;
+}
+

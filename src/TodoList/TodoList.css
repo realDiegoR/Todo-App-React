@@ -1,0 +1,8 @@
+.TodoList {
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.TodoList ul {
+    font-size: 1.6rem;
+}
