@@ -1,9 +1,10 @@
 .TodoCounter {
     margin: 20px 0 10px;
     padding: 14px;
-    background-color: white;
+    background-color: #eeeeee;
     /* box-shadow: 0 4px 1px black; */
     border: 1px solid black;
     border-radius: 6px;
     font-size: 1.7rem;
+    color: #1f3a6f
 }

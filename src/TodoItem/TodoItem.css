@@ -3,15 +3,14 @@
     justify-content: space-between;
     margin: 5px 0;
     padding: 12px;
-    background-color:#f7cbdc;
-    border-radius: 2px;
-    /* box-shadow: 0 1px 5px black; */
+    background-color:#b4c6db;
+    border-radius: 28px;
+    box-shadow: 0 5px 9px gray;
     border: 1px solid;
-    transition: background-color 200ms;
+    transition: background-color 100ms;
 }
 
 .TodoItem:hover {
-    box-shadow: 0 0 1px black;
 }
 
 .Icon-check-active {
@@ -31,5 +30,6 @@
 }
 
 .TodoItem__text--completed {
+    background-color: #64869bbb;
     text-decoration: line-through;
 }

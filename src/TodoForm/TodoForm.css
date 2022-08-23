@@ -1,0 +1,28 @@
+.TodoForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 270px;
+    width: 80vw;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
+    background-color: lightcyan;
+    color: black;
+    border-radius: 5px;
+}
+
+/* .TodoForm label {
+    
+} */
+
+.TodoForm textarea {
+    padding: 4px;
+    resize: none;
+}
+
+.TodoForm button {
+    outline: none;
+    padding: 4px;
+    margin: 0 4px;
+}

@@ -4,7 +4,7 @@ import "./TodoItem.css"
 function TodoItem(props) {
 
     return (
-        <li className="TodoItem">
+        <li className={`TodoItem ${props.completed ? "TodoItem__text--completed" : undefined}`}>
             <span 
                 className={`Icon-check ${props.completed && "Icon-check-active"}`}
                 onClick={() => props.onComplete(props.text)}
