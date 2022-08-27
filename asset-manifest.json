@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/realdiegor.github.io/Todo-App-React/static/css/main.bc6e829b.css",
-    "main.js": "/realdiegor.github.io/Todo-App-React/static/js/main.2b0b0844.js",
-    "static/media/bg-desktop-light.jpg": "/realdiegor.github.io/Todo-App-React/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
-    "static/media/bg-desktop-dark.jpg": "/realdiegor.github.io/Todo-App-React/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
-    "index.html": "/realdiegor.github.io/Todo-App-React/index.html",
-    "static/media/icon-cross.svg": "/realdiegor.github.io/Todo-App-React/static/media/icon-cross.e53d9e15dd36df451b2e.svg",
-    "main.bc6e829b.css.map": "/realdiegor.github.io/Todo-App-React/static/css/main.bc6e829b.css.map",
-    "main.2b0b0844.js.map": "/realdiegor.github.io/Todo-App-React/static/js/main.2b0b0844.js.map"
+    "main.css": "/realDiegoR.github.io/Todo-App-React/static/css/main.b7c098b3.css",
+    "main.js": "/realDiegoR.github.io/Todo-App-React/static/js/main.6fdedc0f.js",
+    "static/media/bg-desktop-light.jpg": "/realDiegoR.github.io/Todo-App-React/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
+    "static/media/bg-desktop-dark.jpg": "/realDiegoR.github.io/Todo-App-React/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
+    "index.html": "/realDiegoR.github.io/Todo-App-React/index.html",
+    "static/media/icon-cross.svg": "/realDiegoR.github.io/Todo-App-React/static/media/icon-cross.e53d9e15dd36df451b2e.svg",
+    "main.b7c098b3.css.map": "/realDiegoR.github.io/Todo-App-React/static/css/main.b7c098b3.css.map",
+    "main.6fdedc0f.js.map": "/realDiegoR.github.io/Todo-App-React/static/js/main.6fdedc0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc6e829b.css",
-    "static/js/main.2b0b0844.js"
+    "static/css/main.b7c098b3.css",
+    "static/js/main.6fdedc0f.js"
   ]
 }
