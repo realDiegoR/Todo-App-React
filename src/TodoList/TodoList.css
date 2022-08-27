@@ -1,6 +1,8 @@
 .TodoList {
-    padding: 15px;
-    border-radius: 6px;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 8px 80px -5px #bbb;
 }
 
 .TodoList ul {

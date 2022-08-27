@@ -1,9 +1,13 @@
 import React from "react";
 
-import '../index.css';
 import { TodoContext } from "../TodoContext";
+import { Hero } from "../Hero";
+import { MainContainer } from "../MainContainer"
+import { ThemeSwitcher } from "../ThemeSwitcher"
+import { TodoCreator } from "../TodoCreator";
 import { TodoCounter } from "../TodoCounter";
 import { TodoItem } from "../TodoItem";
+import { TodoDisplayer } from "../TodoDisplayer";
 import { TodoForm } from "../TodoForm";
 import { TodoList } from "../TodoList";
 import { Header } from "../Header"
@@ -13,6 +17,7 @@ import { Modal } from "../Modal"
 
 function AppUI() {
     const {
+        darkTheme,
         error,
         loading,
         todos,
@@ -21,12 +26,50 @@ function AppUI() {
         completeTodos,
         deleteTodos,
         openModal,
+        todosDisplayed,
         setOpenModal
     } = React.useContext(TodoContext)
 
     return (
         <React.Fragment>
-            <Header>
+            <Hero />
+            <MainContainer>
+                <Header>
+                    <ThemeSwitcher />
+                    <TodoCreator />
+                </Header>
+
+                <TodoList>
+                    {/* {error && <p>Desespérate, hubo un error.</p>}
+                    {loading && !error && <p>Estamos cargando, no desesperes...</p>}
+                    {(!loading && !todos.length) && <p>Crea tu primer TODO!</p>} */}
+
+                    {todos.filter(filterTodos).map( todo => (
+                        <TodoItem 
+                            key={todo.text} 
+                            text={todo.text}
+                            completed={todo.completed}
+                            searchValue={searchValue}
+                            loading={loading}
+                        />
+                    ))
+                    
+                    }
+
+                    <TodoCounter />
+                </TodoList>
+
+                <TodoDisplayer />
+
+                {/* <TodoMenu>
+                    <TodoCounter />
+                    <TodoSwitcher />
+                    <TodoClearer />
+                </TodoMenu> */}
+            </MainContainer>
+
+
+            {/* <Header>
                 <TodoCounter />
                 <TodoSearch />
             </Header>
@@ -58,7 +101,7 @@ function AppUI() {
 
             <CreateTodoButton 
                 setOpenModal={setOpenModal}
-            />
+            /> */}
         </React.Fragment>
     )
 }

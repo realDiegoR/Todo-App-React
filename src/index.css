@@ -1,12 +1,103 @@
+:root {
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+  --GrayLine: #8885;
+
+  --VeryDarkDesaturatedBlue: #181824;
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlue: (hover): hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body{
-  background-color: #eeeeee;
-  font-size: 62.5%;
-  font-family:  Helvetica, sans-serif;
   min-height: 100vh;
-  /* background-image: linear-gradient(#2d2d2d, #f8efe6); */
+  background-color: var(--VeryLightGray);
+  font-size: 62.5%;
+  font-family:  'Josefin Sans', Helvetica, sans-serif;
+  overflow: hidden;
 }
+
+
+/* dark theme styles running in cascade */
+.DarkTheme {
+  background-color: var(--VeryDarkDesaturatedBlue);
+}
+
+.DarkTheme .Hero {
+  background-image: url("/public/images/bg-mobile-dark.jpg");
+}
+
+.DarkTheme .TodoCreator,
+.DarkTheme .TodoItem,
+.DarkTheme .TodoCounter,
+.DarkTheme .TodoDisplayer,
+.DarkTheme ::placeholder {
+  background-color: rgb(32, 36, 65);
+  background-color: rgb(27, 31, 62);
+  color: #668c;
+}
+
+.DarkTheme .TodoList,
+.DarkTheme .TodoDisplayer {
+  box-shadow: 0 5px 25px -5px black;
+}
+
+.DarkTheme .TodoItem {
+  color: var(--VeryLightGrayishBlue)
+}
+
+.DarkTheme .TodoItem__text--completed {
+  color: #668c
+}
+
+
+@media screen and (min-width: 768px) {
+  .Hero {
+    background-image: url("/public/images/bg-desktop-light.jpg");
+  }
+
+  .DarkTheme .Hero {
+    background-image: url("/public/images/bg-desktop-dark.jpg");
+  }
+
+  .TodoDisplayer,
+  .DarkTheme .TodoDisplayer {
+    position: relative;
+    top: -46px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: 1.4rem;
+  }
+
+  .Header {
+    height: 120px;
+  }
+
+  .ThemeSwitcher h1 {
+    font-size: 3.2rem;
+    letter-spacing: 13px;
+    color: white;
+    font-weight: 700;
+  }
+
+  .MainContainer {
+    margin-top: 70px;
+  }
+
+  .TodoList {
+    margin-top: 25px;
+  }
+} 

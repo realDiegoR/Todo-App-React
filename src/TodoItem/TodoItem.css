@@ -1,26 +1,25 @@
 .TodoItem {
     display: flex;
     justify-content: space-between;
-    margin: 5px 0;
-    padding: 12px;
-    background-color:#b4c6db;
-    border-radius: 28px;
-    box-shadow: 0 5px 9px gray;
-    border: 1px solid;
+    align-items: center;
+    padding: 18px;
+    background-color: white;
     transition: background-color 100ms;
 }
 
-.TodoItem:hover {
+.TodoItem:nth-child(n+2) {
+    border-top: 1px solid var(--GrayLine);
 }
 
-.Icon-check-active {
-    color: #2cdf30;
+.TodoItem p {
+    max-width: calc(100% - 54px);
+    flex-grow: 1;
+    margin-left: 14px;
+    background-color: transparent;
+    font-size: 1.4rem;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
-
-.Icon-check:hover {
-    color: #4caf50;
-}
-
 
 .Icon-delete, .Icon-check {
     cursor: pointer;
@@ -30,6 +29,6 @@
 }
 
 .TodoItem__text--completed {
-    background-color: #64869bbb;
+    color: #0005;
     text-decoration: line-through;
 }

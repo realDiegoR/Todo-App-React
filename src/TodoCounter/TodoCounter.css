@@ -1,10 +1,20 @@
 .TodoCounter {
-    margin: 20px 0 10px;
-    padding: 14px;
-    background-color: #eeeeee;
-    /* box-shadow: 0 4px 1px black; */
-    border: 1px solid black;
-    border-radius: 6px;
-    font-size: 1.7rem;
-    color: #1f3a6f
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: white;
+    border-top: 1px solid var(--GrayLine);
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    color: #888c
+}
+
+.Clickeable {
+    transition: 100ms color;
+}
+
+.Clickeable:hover {
+    cursor: pointer;
+    color: black;
 }

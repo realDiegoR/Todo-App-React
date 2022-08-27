@@ -10,11 +10,25 @@ function TodoProvider(props) {
         dataStatus
       } = useLocalStorage("TODOS_V1", [])
       
+
       const { loading, error } = dataStatus
       
       const totalTodos = todos.length
-      const completedTodos = todos.filter( todo => todo.completed === true).length
-      const filterTodos = ( todo ) => todo.text.toLowerCase().includes(searchValue.toLowerCase())
+      const completedTodos = todos.filter( todo => todo.completed).length
+
+      const filterTodos = ( todo ) => {
+        if (todosDisplayed === "all") {
+          return todo
+        }
+
+        if (todosDisplayed === "active") {
+          return !todo.completed
+        }
+
+        if (todosDisplayed === "completed") {
+          return todo.completed
+        }
+      } 
       
       const completeTodos = (text) => {
         const clickedTodo = todos.find( todo => todo.text === text)
@@ -35,10 +49,19 @@ function TodoProvider(props) {
         todos.splice(clickedTodoIndex, 1) 
         saveTodos([...todos])
       }
+
+      const deleteCompletedTodos = () => {
+        const uncompletedTodos = todos.filter( todo => !todo.completed)
+        saveTodos([...uncompletedTodos])
+      }
       
       const [searchValue, setSearchValue] = React.useState('')
 
+      const [darkTheme, setDarkTheme] = React.useState(false)
+
       const [openModal, setOpenModal] = React.useState(false)
+
+      const [todosDisplayed, setTodosDisplayed] = React.useState("all")
 
       return (
         <TodoContext.Provider value={{
@@ -48,11 +71,16 @@ function TodoProvider(props) {
             totalTodos,
             completedTodos,
             searchValue,
+            darkTheme,
+            setDarkTheme,
             setSearchValue,
             filterTodos,
             completeTodos,
             addTodo,
             deleteTodos,
+            deleteCompletedTodos,
+            todosDisplayed,
+            setTodosDisplayed,
             openModal,
             setOpenModal
         }}>

@@ -1,0 +1,6 @@
+.CrossIcon {
+    width: 18px;
+    height: 18px;
+    background-image: url("/public/images/icon-cross.svg");
+    cursor: pointer;
+}

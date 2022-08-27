@@ -7,21 +7,21 @@ function useLocalStorage(itemName, initialValue) {
 
     React.useEffect( () => {
         setTimeout( () => {
-        try {
-            if (!localStorage.getItem(itemName)) {
-            localStorage.setItem(itemName, JSON.stringify(initialValue))
-            } 
-            
-            const localStorageItem = localStorage.getItem(itemName)
-            const parsedItem = JSON.parse(localStorageItem)
+            try {
+                if (!localStorage.getItem(itemName)) {
+                localStorage.setItem(itemName, JSON.stringify(initialValue))
+                } 
+                
+                const localStorageItem = localStorage.getItem(itemName)
+                const parsedItem = JSON.parse(localStorageItem)
 
-            setItem(parsedItem)
-            setdataStatus({...dataStatus, loading:false})
-        } catch (error) {
-            console.error(error)
-            setdataStatus({...dataStatus, error:true})
-        } 
-        }, 1000)
+                setItem(parsedItem)
+                setdataStatus({...dataStatus, loading:false})
+            } catch (error) {
+                console.error(error)
+                setdataStatus({...dataStatus, error:true})
+            } 
+            }, 1000)
     }, [])
 
 

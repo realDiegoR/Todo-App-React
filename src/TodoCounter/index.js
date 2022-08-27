@@ -3,12 +3,19 @@ import { TodoContext } from "../TodoContext"
 import "./TodoCounter.css"
 
 function TodoCounter(){
-    const { totalTodos, completedTodos } = React.useContext(TodoContext)
+    const {totalTodos, completedTodos, deleteCompletedTodos } = React.useContext(TodoContext)
 
     return (
-        <React.Fragment>
-            <h2 className="TodoCounter">Has completado {completedTodos} de {totalTodos} TODOs </h2>
-        </React.Fragment>
+        <section className="TodoCounter">
+            <span>{totalTodos - completedTodos} items left</span>
+            <span
+            className="Clickeable"
+                onClick={deleteCompletedTodos}
+            >Clear Completed</span>
+        </section>
+        //     <React.Fragment>
+        //     <h2 className="TodoCounter">Has completado {completedTodos} de {totalTodos} TODOs </h2>
+        // </React.Fragment>
     )
 }
 
