@@ -1,9 +1,0 @@
-.Hero {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    aspect-ratio: 16 / 9;
-    max-height: 35vh;
-    background-image: url("/public/images/bg-mobile-light.jpg");
-    background-size: cover;
-}

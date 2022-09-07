@@ -17,7 +17,6 @@ function ThemeSwitcher() {
             <h1>TODO</h1>
             <img 
                 src={darkTheme ? `${path}icon-sun.svg` : `${path}icon-moon.svg`} 
-                // height="22px"
                 alt="Icon"
                 onClick={() => setDarkTheme(prevState => !prevState)}
             />

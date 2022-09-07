@@ -1,9 +1,12 @@
 import React from "react";
-import "./Hero.css"
+import { TodoContext } from "../TodoContext";
+import "./Hero.scss"
 
 function Hero() {
+    const { themeMode } = React.useContext(TodoContext) 
+
     return (
-        <div className="Hero" />
+        <div className={`${themeMode}Hero`} />
     )
 }
 

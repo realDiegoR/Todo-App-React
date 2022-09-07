@@ -11,10 +11,11 @@ function TodoProvider(props) {
       } = useLocalStorage("TODOS_V1", [])
       
 
-      const { loading, error } = dataStatus
+      const { loading, error } = dataStatus 
       
       const totalTodos = todos.length
       const completedTodos = todos.filter( todo => todo.completed).length
+      const todosLeft = totalTodos - completedTodos
 
       const filterTodos = ( todo ) => {
         if (todosDisplayed === "all") {
@@ -58,6 +59,7 @@ function TodoProvider(props) {
       const [searchValue, setSearchValue] = React.useState('')
 
       const [darkTheme, setDarkTheme] = React.useState(false)
+      const themeMode = darkTheme ? "Dark" : "Light"
 
       const [openModal, setOpenModal] = React.useState(false)
 
@@ -68,11 +70,11 @@ function TodoProvider(props) {
             loading,
             error,
             todos,
-            totalTodos,
-            completedTodos,
+            todosLeft,
             searchValue,
             darkTheme,
             setDarkTheme,
+            themeMode,
             setSearchValue,
             filterTodos,
             completeTodos,

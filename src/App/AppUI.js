@@ -8,26 +8,20 @@ import { TodoCreator } from "../TodoCreator";
 import { TodoCounter } from "../TodoCounter";
 import { TodoItem } from "../TodoItem";
 import { TodoDisplayer } from "../TodoDisplayer";
-import { TodoForm } from "../TodoForm";
+// import { TodoForm } from "../TodoForm";
 import { TodoList } from "../TodoList";
 import { Header } from "../Header"
-import { TodoSearch } from "../TodoSearch"
-import { CreateTodoButton } from "../CreateTodoButton"
-import { Modal } from "../Modal"
+// import { TodoSearch } from "../TodoSearch"
+// import { CreateTodoButton } from "../CreateTodoButton"
+// import { Modal } from "../Modal"
 
 function AppUI() {
     const {
-        darkTheme,
-        error,
         loading,
+        error,
         todos,
         searchValue,
         filterTodos,
-        completeTodos,
-        deleteTodos,
-        openModal,
-        todosDisplayed,
-        setOpenModal
     } = React.useContext(TodoContext)
 
     return (
@@ -38,12 +32,10 @@ function AppUI() {
                     <ThemeSwitcher />
                     <TodoCreator />
                 </Header>
-
                 <TodoList>
-                    {/* {error && <p>Desespérate, hubo un error.</p>}
+                    {error && <p>Desespérate, hubo un error.</p>}
                     {loading && !error && <p>Estamos cargando, no desesperes...</p>}
-                    {(!loading && !todos.length) && <p>Crea tu primer TODO!</p>} */}
-
+                    {(!loading && !todos.length) && <p>Crea tu primer TODO!</p>}
                     {todos.filter(filterTodos).map( todo => (
                         <TodoItem 
                             key={todo.text} 
@@ -52,20 +44,11 @@ function AppUI() {
                             searchValue={searchValue}
                             loading={loading}
                         />
-                    ))
-                    
+                    ))  
                     }
-
                     <TodoCounter />
                 </TodoList>
-
                 <TodoDisplayer />
-
-                {/* <TodoMenu>
-                    <TodoCounter />
-                    <TodoSwitcher />
-                    <TodoClearer />
-                </TodoMenu> */}
             </MainContainer>
 
 

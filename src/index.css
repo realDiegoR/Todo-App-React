@@ -28,76 +28,23 @@ html, body{
   overflow: hidden;
 }
 
-
-/* dark theme styles running in cascade */
 .DarkTheme {
   background-color: var(--VeryDarkDesaturatedBlue);
 }
 
-.DarkTheme .Hero {
-  background-image: url("/public/images/bg-mobile-dark.jpg");
-}
-
-.DarkTheme .TodoCreator,
-.DarkTheme .TodoItem,
-.DarkTheme .TodoCounter,
-.DarkTheme .TodoDisplayer,
-.DarkTheme ::placeholder {
-  background-color: rgb(32, 36, 65);
-  background-color: rgb(27, 31, 62);
-  color: #668c;
-}
-
-.DarkTheme .TodoList,
-.DarkTheme .TodoDisplayer {
-  box-shadow: 0 5px 25px -5px black;
-}
-
-.DarkTheme .TodoItem {
-  color: var(--VeryLightGrayishBlue)
-}
-
-.DarkTheme .TodoItem__text--completed {
-  color: #668c
-}
-
-
 @media screen and (min-width: 768px) {
-  .Hero {
-    background-image: url("/public/images/bg-desktop-light.jpg");
-  }
-
-  .DarkTheme .Hero {
-    background-image: url("/public/images/bg-desktop-dark.jpg");
-  }
-
-  .TodoDisplayer,
-  .DarkTheme .TodoDisplayer {
-    position: relative;
-    top: -46px;
-    width: 50%;
-    margin: 0 auto;
-    background-color: transparent;
-    box-shadow: none;
-    font-size: 1.4rem;
-  }
-
   .Header {
     height: 120px;
   }
 
   .ThemeSwitcher h1 {
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     letter-spacing: 13px;
     color: white;
     font-weight: 700;
   }
 
   .MainContainer {
-    margin-top: 70px;
-  }
-
-  .TodoList {
-    margin-top: 25px;
+    margin-top: 75px;
   }
 } 

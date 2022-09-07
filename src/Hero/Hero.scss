@@ -1,0 +1,26 @@
+.Hero {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    aspect-ratio: 16 / 9;
+    max-height: 285px;
+    background-size: cover;
+}
+
+.LightHero {
+    @extend .Hero;
+    background-image: url("~/public/images/bg-mobile-light.jpg");
+
+    @media (min-width: 768px) {
+        background-image: url("~/public/images/bg-desktop-light.jpg");
+    }
+}
+
+.DarkHero {
+    @extend .Hero;
+    background-image: url("~/public/images/bg-mobile-dark.jpg");
+
+    @media screen and (min-width: 768px) {
+        background-image: url("~/public/images/bg-desktop-dark.jpg");
+    }
+}

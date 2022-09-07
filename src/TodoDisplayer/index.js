@@ -1,29 +1,39 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
-import "./TodoDisplayer.css"
+import "./TodoDisplayer.scss"
 
 function TodoDisplayer() {
-    const { todosDisplayed, setTodosDisplayed } = React.useContext(TodoContext)
+    const { 
+        todosDisplayed, 
+        setTodosDisplayed,
+        themeMode
+    } = React.useContext(TodoContext)
 
     const onClick = (e) => {
         setTodosDisplayed(e.target.innerText.toLowerCase())
     }
 
+    const displayMode = (mode) => {
+        if (todosDisplayed === mode) return "Active"
+        if (todosDisplayed === mode) return "Active"
+        if (todosDisplayed === mode) return "Active"
+        return undefined
+    }
+
     return (
-        <div className="TodoDisplayer">
+        <div className={`${themeMode}TodoDisplayer`}>
             <span
-                className={todosDisplayed === "all" ? "Active" : undefined}
+                className={displayMode("all")}
                 onClick={onClick}
             >All</span>
             <span
-                className={todosDisplayed === "active" ? "Active" : undefined}
+                className={displayMode("active")}
                 onClick={onClick}
             
             >Active</span>
             <span
-                className={todosDisplayed === "completed" ? "Active" : undefined}
+                className={displayMode("completed")}
                 onClick={onClick}
-            
             >Completed</span>
         </div>
     )

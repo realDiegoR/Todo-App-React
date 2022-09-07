@@ -1,0 +1,53 @@
+@mixin rectangle() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    transition: background-color 100ms;
+
+    &:nth-child(n+2) {
+        border-top: 1px solid var(--GrayLine);
+    }
+    
+    p {
+        max-width: calc(100% - 54px);
+        flex-grow: 1;
+        margin-left: 14px;
+        background-color: transparent;
+        font-size: 1.4rem;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
+
+    &__text--completed {
+        text-decoration: line-through;
+    }
+}
+
+.LightTodoItem {    
+    @include rectangle;
+    background-color: white;
+
+    &__text--completed {
+        color: #0005;
+    }
+}
+
+.DarkTodoItem {
+    @include rectangle;
+    background-color: rgb(27, 31, 62);
+    color: #eee;
+
+    &__text--completed {
+        color: #668c
+    }
+}
+
+
+.Icon-delete, .Icon-check {
+    cursor: pointer;
+}
+
+.Icon-delete:hover {
+    color: red;
+}

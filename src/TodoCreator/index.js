@@ -1,10 +1,15 @@
 import React from "react";
 import { CheckCircle } from "../CheckCircle";
 import { TodoContext } from "../TodoContext";
-import "./TodoCreator.css"
+import "./TodoCreator.scss"
 
 function TodoCreator() {
-    const { todos, addTodo } = React.useContext(TodoContext)
+    const { 
+        todos, 
+        addTodo, 
+        themeMode 
+    } = React.useContext(TodoContext)
+    
     const [newTodoValue, setnewTodoValue] = React.useState("")
 
     const isValid = (newTodoValue) => {
@@ -32,7 +37,7 @@ function TodoCreator() {
     }
 
     return (
-        <div className="TodoCreator">
+        <div className={`${themeMode}TodoCreator`}>
             <CheckCircle 
                 onClick={() => onClick(newTodoValue)}
             />

@@ -1,0 +1,57 @@
+.TodoDisplayer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 15px 18px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    span {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 10px;
+        cursor: default;
+    }
+
+    span:not(.Active) {
+        cursor: pointer;
+        transition: color 100ms;
+    }
+
+    @media (min-width: 768px) {
+        // position: relative;
+        // top: -47px;
+        // width: 50%;
+        // margin: 0 auto;
+        // background-color: transparent;
+        // box-shadow: none !important; //quick solution to overwriting in child class
+        // font-size: 1.4rem;
+    }
+}
+
+.LightTodoDisplayer {
+    @extend .TodoDisplayer;
+    background-color: white;
+    color: #888c;
+    box-shadow: 0 5px 25px -12px gray;
+
+    span:not(.Active):hover {
+        color: #555d
+    }
+}
+
+.DarkTodoDisplayer {
+    @extend .TodoDisplayer;
+    background-color: rgb(27, 31, 62);
+    color: #668c;
+    box-shadow: 0 5px 25px -5px black;
+
+    span:not(.Active):hover {
+        color: #ccc
+    }
+}
+
+.Active {
+    color: rgb(47, 130, 218);
+}

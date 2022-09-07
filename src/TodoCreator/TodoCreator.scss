@@ -1,0 +1,36 @@
+.TodoCreator {
+    display: flex;
+    padding: 14px 18px;
+    border-radius: 5px;
+
+    input {
+        border: none;
+        outline: 0;
+        margin-left: 10px;
+        flex-grow: 1;
+        background-color: transparent;
+        font-size: 1.4rem;
+        font-family: 'Josefin Sans', Helvetica, sans-serif;
+        overflow-x: scroll;
+}
+}
+
+.LightTodoCreator {
+    @extend .TodoCreator;
+    background-color: white;
+
+}
+
+.DarkTodoCreator {
+    @extend .TodoCreator;
+    background-color: rgb(27, 31, 62);
+    color: #668c;
+
+    input {
+        color: white;
+    }
+    
+    ::placeholder {
+        color: #668c;
+    }
+}
