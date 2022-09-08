@@ -12,31 +12,6 @@
       }
 }
 
-.TodoListImage {
-    display: block;
-    width: 70%;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-    background-color: transparent;
-}
-
-.TodoListText {
-    margin-top: 15px;
-    font-size: 1.6rem;
-    text-align: center;
-
-    @media (min-width: 768px) {
-        font-size: 1.8rem;
-    }
-}
-
-.Spinner {
-    display: flex;
-    place-content: center;
-    margin: 20px 0;
-    // background-color: red
-}
-
 .LightTodoList {
     @extend .TodoList;
     box-shadow: 0 8px 80px -5px #bbb;
@@ -45,4 +20,10 @@
 .DarkTodoList {
     @extend .TodoList;
     box-shadow: 0 5px 25px -5px black;
+}
+
+.Spinner {
+    display: flex;
+    place-content: center;
+    margin: 20px 0;
 }

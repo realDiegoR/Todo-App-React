@@ -33,9 +33,6 @@ function AppUI() {
                     <TodoCreator />
                 </Header>
                 <TodoList>
-                    {error && <p>Desespérate, hubo un error.</p>}
-                    {loading && !error && <p>Estamos cargando, no desesperes...</p>}
-                    {(!loading && !todos.length) && <p>Crea tu primer TODO!</p>}
                     {todos.filter(filterTodos).map( todo => (
                         <TodoItem 
                             key={todo.text} 
