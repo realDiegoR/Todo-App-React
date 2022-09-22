@@ -12,6 +12,7 @@ function CheckCircle(props) {
             <img 
                 src={`${path}icon-check.svg`}
                 style={props.checkIcon ? {} : {opacity:0} }
+                alt="check"
             />
         </div>
     )

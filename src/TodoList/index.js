@@ -1,39 +1,20 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
-import { DataNotFound } from "../DataNotFound";
-import ClipLoader from "react-spinners/ClipLoader";
 import "./TodoList.scss"
 
 function TodoList(props) {
-    const { 
-        themeMode,
-        todos, 
-        filterTodos, 
-        loading, 
-    } = React.useContext(TodoContext)
-    
-    const totalFilteredTodos = todos.filter(filterTodos).length
 
-    if (loading) { 
-       return (
-        <div className="Spinner">
-            <ClipLoader color={"#2F82DA"} loading={loading} size={100}/>
-        </div>
-       )
-    }
+    return (
+        <section className={(!props.loading && !!props.totalFilteredTodos) ? `${props.themeMode}TodoList` : `TodoList`}>
+            {props.loading && props.onLoading}
+            {!props.loading && !props.totalFilteredTodos && props.onEmptyDisplayedTodos()}
 
-    if (totalFilteredTodos === 0) {
-        return <DataNotFound />
-    } else { 
-        return ( 
-            <section className={`${themeMode}TodoList`}>
-                <ul>
-                    {props.children}
-                </ul>
-            </section>
-        )
-    }
-
+            <ul>
+                {!props.loading && props.filteredTodos.map(props.render) }
+            </ul>
+            
+            {!props.loading && !!props.totalFilteredTodos && props.children}
+        </section>
+    )
 }
 
 export { TodoList }

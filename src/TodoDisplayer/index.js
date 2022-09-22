@@ -1,13 +1,7 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./TodoDisplayer.scss"
 
-function TodoDisplayer() {
-    const { 
-        todosDisplayed, 
-        setTodosDisplayed,
-        themeMode
-    } = React.useContext(TodoContext)
+function TodoDisplayer({ todosDisplayed, setTodosDisplayed, themeMode }) {
 
     const onClick = (e) => {
         setTodosDisplayed(e.target.innerText.toLowerCase())

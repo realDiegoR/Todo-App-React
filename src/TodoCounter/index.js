@@ -1,15 +1,7 @@
 import React from "react"
-import { TodoContext } from "../TodoContext"
 import "./TodoCounter.scss"
 
-function TodoCounter(){
-    const {
-        todosLeft, 
-        themeMode,
-        deleteCompletedTodos,
-        darkTheme
-    } = React.useContext(TodoContext)
-
+function TodoCounter({ todosLeft, themeMode, deleteCompletedTodos }){
 
     return (
         <section className={`${themeMode}TodoCounter`}>

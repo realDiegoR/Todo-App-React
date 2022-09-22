@@ -1,10 +1,8 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./ThemeSwitcher.css"
 const body = document.querySelector("body")
 
-function ThemeSwitcher() {
-    const { darkTheme, setDarkTheme } = React.useContext(TodoContext)
+function ThemeSwitcher({ darkTheme, setDarkTheme }) {
     const path = `${process.env.PUBLIC_URL}/images/`
     
     if (darkTheme) {

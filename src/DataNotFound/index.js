@@ -1,12 +1,7 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./DataNotFound.scss"
 
-function DataNotFound() {
-    const {
-        todosDisplayed,
-        themeMode
-    } = React.useContext(TodoContext)
+function DataNotFound({ todosDisplayed, themeMode }) {
 
     const path = `${process.env.PUBLIC_URL}/images/`
     const notFoundTokens = {
@@ -26,7 +21,8 @@ function DataNotFound() {
 
     return (
         <div className={`${themeMode}EmptyTodoList`}>
-            <img src={notFoundTokens[todosDisplayed]["image"]} className={`TodoListImage`} alt="not found" />
+            <img src={notFoundTokens[todosDisplayed]["image"]} className={`TodoListImage`} 
+             alt="not found" />
             <p className={`${themeMode}TodoListText`}>{notFoundTokens[todosDisplayed]["text"]}</p>
         </div>
     )

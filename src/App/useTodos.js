@@ -1,13 +1,13 @@
 import React from "react"
 import { useLocalStorage } from "./useLocalStorage"
 
-const TodoContext = React.createContext()
-
-function TodoProvider(props) {
+function useTodos() {
     const { 
         item: todos, 
         saveItem: saveTodos,
-        dataStatus
+        dataStatus,
+        setdataStatus,
+        setSyncronized
       } = useLocalStorage("TODOS_V1", [])
       
 
@@ -55,6 +55,11 @@ function TodoProvider(props) {
         const uncompletedTodos = todos.filter( todo => !todo.completed)
         saveTodos([...uncompletedTodos])
       }
+
+      const syncronize = () => {
+        setSyncronized(false)
+        setdataStatus({...dataStatus, loading:true})
+      }
       
       const [searchValue, setSearchValue] = React.useState('')
 
@@ -65,30 +70,31 @@ function TodoProvider(props) {
 
       const [todosDisplayed, setTodosDisplayed] = React.useState("all")
 
-      return (
-        <TodoContext.Provider value={{
-            loading,
-            error,
-            todos,
-            todosLeft,
-            searchValue,
-            darkTheme,
-            setDarkTheme,
-            themeMode,
-            setSearchValue,
-            filterTodos,
-            completeTodos,
-            addTodo,
-            deleteTodos,
-            deleteCompletedTodos,
-            todosDisplayed,
-            setTodosDisplayed,
-            openModal,
-            setOpenModal
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    )
+      const filteredTodos = todos.filter(filterTodos)
+
+
+      return ({
+        loading,
+        error,
+        todos,
+        filteredTodos,
+        todosLeft,
+        searchValue,
+        darkTheme,
+        setDarkTheme,
+        themeMode,
+        setSearchValue,
+        filterTodos,
+        completeTodos,
+        addTodo,
+        deleteTodos,
+        deleteCompletedTodos,
+        todosDisplayed,
+        setTodosDisplayed,
+        openModal,
+        setOpenModal,
+        syncronize
+      })
 }
 
-export { TodoContext, TodoProvider }
+export { useTodos }

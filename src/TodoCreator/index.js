@@ -1,14 +1,8 @@
 import React from "react";
 import { CheckCircle } from "../CheckCircle";
-import { TodoContext } from "../TodoContext";
 import "./TodoCreator.scss"
 
-function TodoCreator() {
-    const { 
-        todos, 
-        addTodo, 
-        themeMode 
-    } = React.useContext(TodoContext)
+function TodoCreator({ todos, addTodo, themeMode }) {
     
     const [newTodoValue, setnewTodoValue] = React.useState("")
 
